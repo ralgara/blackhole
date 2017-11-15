@@ -8,12 +8,12 @@ package blackhole;
 
 // Service definition
 service Bank {
-    rpc Deposit (BankRequest) returns (BankReply) {}
+  rpc Deposit (BankRequest) returns (BankReply) {}
 }
 
 enum TxnType {
-    DEPOSIT = 0;
-    WITHDRAWAL = 1;
+  DEPOSIT = 0;
+  WITHDRAWAL = 1;
 }
 
 message BankRequest {
@@ -21,7 +21,7 @@ message BankRequest {
   string account = 2;
   TxnType type = 3;
   float amount = 4;
-  }
+}
 
 message BankReply {
   string message = 1;
