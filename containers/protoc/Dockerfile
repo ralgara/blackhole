@@ -6,5 +6,3 @@ WORKDIR /src
 ENV PROTOBUF_TAG v3.4.1
 
 RUN ./build.sh
-
-ENTRYPOINT ["protoc"]
