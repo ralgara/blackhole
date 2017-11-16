@@ -7,7 +7,7 @@ ENV PROTOBUF_TAG v3.4.1
 
 RUN apt-get update
 
-ENV PACKAGES git autoconf automake build-essential gcc python-dev
+ENV PACKAGES git autoconf automake libtool build-essential gcc python-dev
 RUN apt-get install -y $PACKAGES
 
 RUN git clone https://github.com/google/protobuf -b $PROTOBUF_TAG --depth 1
