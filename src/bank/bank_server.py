@@ -9,6 +9,7 @@ ledger = {}
 
 class DemoBankServicer(txn_grpc.BankServicer):
     def Deposit(self, request, context):
+        print "--- txn start"
         if ledger.has_key(request.account):
             print "Account {0} exists".format(request.account)
         else:
@@ -21,6 +22,7 @@ class DemoBankServicer(txn_grpc.BankServicer):
         print "Before transaction: {0}".format(ledger[request.account])
         ledger[request.account]['balance'] += request.amount
         print "After transaction: {0}".format(ledger[request.account])
+        print "--- txn end"
         return txn.BankReply(message="Successful", balance=ledger[request.account]['balance'])
 
 
