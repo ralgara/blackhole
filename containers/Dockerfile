@@ -22,6 +22,10 @@ RUN ./autogen.sh && \
     make check && \
     make install
 
-WORKDIR /src
-
 RUN rm -rf ./protobuf
+
+RUN apt-get install -y python-pip
+
+RUN pip install grpcio-tools
+
+WORKDIR /src
