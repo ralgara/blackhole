@@ -8,8 +8,8 @@ service Bank {
 }
 
 enum TxnType {
-  DEPOSIT = 0;
-  WITHDRAWAL = 1;
+  CREDIT = 0;
+  DEBIT = 1;
 }
 
 message BankRequest {
