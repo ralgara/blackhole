@@ -12,8 +12,11 @@ request.amount = 3.14
 #print request.SerializeToString()
 #pdb.set_trace()
 
+print "Opening channel to server"
 channel = grpc.insecure_channel('localhost:50051')
+print "Creating stub"
 stub = txn_grpc.BankStub(channel)
+print "Attempting transaction"
 reply = stub.Deposit(request)
 
-print "Transaction completed: {message}, balance: {balance}".format(**reply)
+print "Transaction completed: {0}".format(reply)
